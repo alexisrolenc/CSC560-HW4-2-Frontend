@@ -1,0 +1,30 @@
+import { Component, OnInit } from '@angular/core';
+import { Player } from 'src/app/shared/player.model';
+import { PlayersService } from 'src/app/shared/players.service';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-lowest-outs',
+  templateUrl: './lowest-outs.component.html',
+  styleUrls: ['./lowest-outs.component.scss']
+})
+export class LowestOutsComponent implements OnInit {
+
+  players: Player[];
+
+  constructor(private playersService: PlayersService, private router: Router) { }
+
+  ngOnInit(): void {
+    this.playersService.getPlayers().subscribe((players: any) => {
+      const lowest2Outs = [players.sort((a,b) => a.numOfOuts-b.numOfOuts)[0],players.sort((a,b) => a.numOfOuts-b.numOfOuts)[1]];
+      this.players = lowest2Outs;
+    })
+  }
+
+  deletePlayer(id: string) {
+    this.playersService.deletePlayer(id).subscribe((player: Player) => {
+      this.ngOnInit(); //have to force reload to make deleted object no longer render
+      console.log(player);
+    });
+  }
+}

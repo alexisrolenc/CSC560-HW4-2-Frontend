@@ -1,0 +1,32 @@
+<div class="layout-box">
+    <div class="top-bar">
+        <h1>Players</h1>
+    </div>
+    <div class="field is-grouped queries">
+        <div class="row">
+            <div class="control query-button">
+                <button class="button is-primary" type="button" (click)="viewAll()">View All</button>
+            </div>
+            <div class="control query-button">
+                <button class="button is-primary" type="button" (click)="mostHomeRuns()">Most Home Runs</button>
+            </div>
+            <div class="control query-button">
+                <button class="button is-primary" type="button" (click)="lte5Walks()">Less Than or Equal To 5 Walks</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="control query-button">
+                <button class="button is-primary" type="button" (click)="avgBatSpeedDes()">Average Batting Speed Descending</button>
+            </div>
+            <div class="control query-button">
+                <button class="button is-primary" type="button" (click)="lowestOuts2()">2 Lowest Amount Of Outs</button>
+            </div>
+            <div class="control query-button">
+                <button class="button is-primary" type="button" (click)="mostStrikes()">Most Strikes</button>
+            </div>
+        </div>
+    </div>
+    <div class="page-content">
+        <router-outlet></router-outlet>
+    </div>
+</div>

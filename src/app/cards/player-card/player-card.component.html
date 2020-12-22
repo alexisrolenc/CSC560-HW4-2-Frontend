@@ -1,0 +1,52 @@
+<div #container class="player-card-container">
+    <a [routerLink]="link">
+        <div class="player-card-content">
+            <h2 class="player-name">{{firstName}} {{lastName}}</h2>
+            <label class="label">
+                <p>
+                    Number Of Outs:
+                </p>
+                <div class="player-card-outs">
+                    {{ numOfOuts }}
+                </div>
+            </label>
+            <label class="label">
+                <p>
+                    Number Of Walks:
+                </p>
+                <div class="player-card-walks">
+                    {{ numOfWalks }}
+                </div>
+            </label>
+            <label class="label">
+                <p>
+                     Number Of Home Runs:
+                </p>
+                <div class="player-card-home-runs">
+                    {{ numOfHomeRuns }}
+                </div>
+            </label>
+            <label  class="label">
+                <p>
+                    Number Of Strikes:
+                </p>
+                <div class="player-card-strikes">
+                    {{ numOfStrikes }}
+                </div>
+            </label>
+            <label  class="label">
+                <p>
+                    Average Batting Speed:
+                </p>
+                <div class="player-card-strikes">
+                    {{ avgBatSpeed }}
+                </div>
+            </label>
+        </div>
+    </a>
+    <div class="x-button" (click)="onXButtonClick()">
+        <span class="icon is-left">
+            <i class="fas fa-trash"></i>
+        </span>
+    </div>
+</div>

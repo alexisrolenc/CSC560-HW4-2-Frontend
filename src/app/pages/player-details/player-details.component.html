@@ -1,0 +1,60 @@
+<div class="form-container">
+    <form #playerDetailsForm="ngForm" (ngSubmit)="onSubmit(playerDetailsForm)">
+        <div class="flex-style">
+            <div class="field">
+                <label class="label">First Name</label>
+                <div class="control">
+                    <input type="text" name="firstName" [ngModel]="player.firstName" class="input small-field">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Last Name</label>
+                <div class="control">
+                    <input type="text" name="lastName" [ngModel]="player.lastName" class="input small-field">
+                </div>
+            </div>
+        </div>
+        <div class="flex-style">
+            <div class="field">
+                <label class="label">Number Of Outs</label>
+                <div class="control">
+                    <input type="text" name="numOfOuts" [ngModel]="player.numOfOuts" class="input small-field">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Number Of Walks</label>
+                <div class="control">
+                    <input type="text" name="numOfWalks" [ngModel]="player.numOfWalks" class="input small-field">
+                </div>
+            </div>
+        </div>
+        <div class="flex-style">
+            <div class="field">
+                <label class="label">Number Of Home Runs</label>
+                <div class="control">
+                    <input type="text" name="numOfHomeRuns" [ngModel]="player.numOfHomeRuns" class="input small-field">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Number Of Strikes</label>
+                <div class="control">
+                    <input type="text" name="numOfStrikes" [ngModel]="player.numOfStrikes" class="input small-field">
+                </div>
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Average Batting Speed</label>
+            <div class="control">
+                <input type="text" name="avgBatSpeed" [ngModel]="player.avgBatSpeed" class="input small-field">
+            </div>
+        </div>
+        <div class="field is-grouped is-pulled-right">
+            <div class="control">
+                <button class="button cancel-button is-text" type="button" (click)="cancel()">Cancel</button>
+            </div>
+            <div class="control">
+                    <button class="button is-primary" type="submit">Save</button>
+                </div>
+        </div>
+    </form>
+</div>

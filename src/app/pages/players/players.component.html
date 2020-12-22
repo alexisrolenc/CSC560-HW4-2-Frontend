@@ -1,0 +1,17 @@
+<div class="main-container">
+    <div class="players-list">
+        <app-player-card 
+            *ngFor="let player of players" 
+            [link]="['/player', player._id]"
+            (delete)="deletePlayer(player._id)"
+            [firstName]="player.firstName" 
+            [lastName]="player.lastName" 
+            [numOfOuts]="player.numOfOuts" 
+            [numOfWalks]="player.numOfWalks" 
+            [numOfHomeRuns]="player.numOfHomeRuns"
+            [numOfStrikes]="player.numOfStrikes" 
+            [avgBatSpeed]="player.avgBatSpeed">
+        </app-player-card>
+    </div>
+    <button class="button floating-add-button is-primary" routerLink="player">Add Player</button>
+</div>
